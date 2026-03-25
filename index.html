@@ -75,20 +75,16 @@
 
           .severity-h { color: #ff6600; font-weight: bold; }
           .severity-m { color: #ffcc00; font-weight: bold; }
-          .severity-c { color: #ff0040; font-weight: bold; }
 
           .status-review { color: #00aaff; }
           .status-accepted { color: #00ff41; }
-          .status-info { color: #555; }
-          .status-dup { color: #888; }
 
-          .contact a {
-              color: #00ff41;
-              text-decoration: none;
-              border-bottom: 1px dashed #00ff41;
+          .note {
+              color: #555;
+              font-size: 0.8em;
+              margin-top: 10px;
+              font-style: italic;
           }
-
-          .contact a:hover { color: #ff0040; border-color: #ff0040; }
 
           .blink {
               animation: blink 1s step-end infinite;
@@ -134,75 +130,68 @@
           <span class="skill">Black Box Testing</span>
       </div>
 
-      <h2>hall of fame / findings</h2>
+      <h2>findings</h2>
       <table>
           <thead>
               <tr>
-                  <th>Program</th>
-                  <th>Finding</th>
+                  <th>Target</th>
+                  <th>Category</th>
                   <th>Severity</th>
                   <th>Status</th>
               </tr>
           </thead>
           <tbody>
               <tr>
-                  <td>FranceConnect+ (DINUM)</td>
-                  <td>Consent screen bypass via OIDC prompt parameter ignored on /auto-login</td>
+                  <td>French Government SSO</td>
+                  <td>Business Logic / OIDC</td>
                   <td><span class="severity-h">H 7.3</span></td>
                   <td><span class="status-review">Under Review</span></td>
               </tr>
               <tr>
-                  <td>TeamViewer Webshop</td>
-                  <td>Unauthenticated GraphQL access — PII disclosure & CRM poisoning</td>
-                  <td><span class="severity-h">H 8.2</span></td>
-                  <td><span class="status-review">Under Review</span></td>
-              </tr>
-              <tr>
-                  <td>TeamViewer Webshop</td>
-                  <td>Server-side cart mutation via ignored persist:false flag</td>
+                  <td>European SaaS (B2B)</td>
+                  <td>Unauthenticated GraphQL / PII Disclosure</td>
                   <td><span class="severity-h">H 8.6</span></td>
                   <td><span class="status-review">Under Review</span></td>
               </tr>
               <tr>
-                  <td>Doctolib</td>
-                  <td>Arbitrary-origin QR login bootstrap — web session capture</td>
+                  <td>European SaaS (B2B)</td>
+                  <td>Unauthenticated GraphQL / Access Control</td>
+                  <td><span class="severity-h">H 8.2</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>European Healthcare Platform</td>
+                  <td>Broken Access Control / Session Capture</td>
                   <td><span class="severity-h">H 7.1</span></td>
                   <td><span class="status-review">Under Review</span></td>
               </tr>
               <tr>
-                  <td>ICDC / Caisse des Dépôts</td>
-                  <td>Unauthenticated sensitive document exposure via Drupal JSON:API</td>
+                  <td>French Public Institution</td>
+                  <td>Unauthenticated Information Disclosure</td>
                   <td><span class="severity-h">H 7.5</span></td>
                   <td><span class="status-review">Under Review</span></td>
               </tr>
               <tr>
-                  <td>BlaBlaCar</td>
-                  <td>Subdomain takeover / Dangling DNS on daily.blablacar.fr</td>
+                  <td>European Mobility Platform</td>
+                  <td>Subdomain Takeover / Dangling DNS</td>
                   <td><span class="severity-m">M 6.5</span></td>
                   <td><span class="status-review">Under Review</span></td>
               </tr>
               <tr>
-                  <td>Sequoia PGP</td>
-                  <td>Integer underflow in SKESK6::decrypt() — DoS via crafted packet</td>
+                  <td>Open Source Crypto Library</td>
+                  <td>Integer Underflow / DoS</td>
                   <td><span class="severity-m">M 6.5</span></td>
                   <td><span class="status-review">Under Review</span></td>
-              </tr>
-              <tr>
-                  <td>Paddle.com</td>
-                  <td>Blind SSRF via webhook notification settings</td>
-                  <td><span class="severity-h">H 7.7</span></td>
-                  <td><span class="status-dup">Duplicate</span></td>
               </tr>
           </tbody>
       </table>
+      <p class="note">* Program names disclosed upon report acceptance and public disclosure authorization.</p>
 
       <h2>contact</h2>
-      <div class="contact">
-          <p>
-              YesWeHack : <a>shark_</a>
-              Email : sh4rk0x@proton.me
-          </p>
-      </div>
+      <p>
+          YesWeHack : shark_<br>
+          Email : sh4rk0x@proton.me
+      </p>
 
       <footer>
           <p>sh4rk0x · All findings reported through responsible disclosure programs.</p>
