@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>sh4rk0x — Security Researcher</title>
+      <style>
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+
+          body {
+              background-color: #0d0d0d;
+              color: #00ff41;
+              font-family: 'Courier New', monospace;
+              padding: 40px 20px;
+              max-width: 900px;
+              margin: 0 auto;
+          }
+
+          .prompt::before { content: "$ "; color: #ff0040; }
+
+          h1 {
+              font-size: 2.5em;
+              color: #00ff41;
+              border-bottom: 1px solid #00ff41;
+              padding-bottom: 10px;
+              margin-bottom: 5px;
+          }
+
+          .subtitle {
+              color: #888;
+              margin-bottom: 40px;
+              font-size: 0.9em;
+          }
+
+          h2 {
+              color: #ff0040;
+              margin: 40px 0 15px 0;
+              font-size: 1.2em;
+          }
+
+          h2::before { content: "// "; color: #555; }
+
+          p { color: #ccc; line-height: 1.7; margin-bottom: 10px; }
+
+          .skills {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              margin-top: 10px;
+          }
+
+          .skill {
+              background: #111;
+              border: 1px solid #00ff41;
+              color: #00ff41;
+              padding: 5px 12px;
+              font-size: 0.85em;
+          }
+
+          table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 10px;
+              font-size: 0.85em;
+          }
+
+          th {
+              text-align: left;
+              color: #ff0040;
+              border-bottom: 1px solid #333;
+              padding: 8px 10px;
+          }
+
+          td { padding: 10px; border-bottom: 1px solid #1a1a1a; color: #ccc; }
+
+          .severity-h { color: #ff6600; font-weight: bold; }
+          .severity-m { color: #ffcc00; font-weight: bold; }
+          .severity-c { color: #ff0040; font-weight: bold; }
+
+          .status-review { color: #00aaff; }
+          .status-accepted { color: #00ff41; }
+          .status-info { color: #555; }
+          .status-dup { color: #888; }
+
+          .contact a {
+              color: #00ff41;
+              text-decoration: none;
+              border-bottom: 1px dashed #00ff41;
+          }
+
+          .contact a:hover { color: #ff0040; border-color: #ff0040; }
+
+          .blink {
+              animation: blink 1s step-end infinite;
+          }
+
+          @keyframes blink {
+              50% { opacity: 0; }
+          }
+
+          footer {
+              margin-top: 60px;
+              color: #333;
+              font-size: 0.75em;
+              border-top: 1px solid #1a1a1a;
+              padding-top: 20px;
+          }
+      </style>
+  </head>
+  <body>
+
+      <div class="prompt"></div>
+      <h1>sh4rk0x<span class="blink">_</span></h1>
+      <p class="subtitle">Security Researcher · Bug Bounty Hunter · France 🇫🇷</p>
+
+      <h2>whoami</h2>
+      <p>
+          Cybersecurity student (Master's level) with a focus on web application security and penetration testing.
+          Passionate about finding real vulnerabilities in production systems through responsible disclosure.
+          Active bug bounty hunter on YesWeHack.
+      </p>
+
+      <h2>skills</h2>
+      <div class="skills">
+          <span class="skill">Web Pentesting</span>
+          <span class="skill">OIDC / OAuth 2.0</span>
+          <span class="skill">GraphQL</span>
+          <span class="skill">Source Code Review</span>
+          <span class="skill">Subdomain Takeover</span>
+          <span class="skill">Business Logic</span>
+          <span class="skill">Cryptographic Issues</span>
+          <span class="skill">Burp Suite</span>
+          <span class="skill">NestJS / TypeScript</span>
+          <span class="skill">Black Box Testing</span>
+      </div>
+
+      <h2>hall of fame / findings</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>Program</th>
+                  <th>Finding</th>
+                  <th>Severity</th>
+                  <th>Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>FranceConnect+ (DINUM)</td>
+                  <td>Consent screen bypass via OIDC prompt parameter ignored on /auto-login</td>
+                  <td><span class="severity-h">H 7.3</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>TeamViewer Webshop</td>
+                  <td>Unauthenticated GraphQL access — PII disclosure & CRM poisoning</td>
+                  <td><span class="severity-h">H 8.2</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>TeamViewer Webshop</td>
+                  <td>Server-side cart mutation via ignored persist:false flag</td>
+                  <td><span class="severity-h">H 8.6</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>Doctolib</td>
+                  <td>Arbitrary-origin QR login bootstrap — web session capture</td>
+                  <td><span class="severity-h">H 7.1</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>ICDC / Caisse des Dépôts</td>
+                  <td>Unauthenticated sensitive document exposure via Drupal JSON:API</td>
+                  <td><span class="severity-h">H 7.5</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>BlaBlaCar</td>
+                  <td>Subdomain takeover / Dangling DNS on daily.blablacar.fr</td>
+                  <td><span class="severity-m">M 6.5</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>Sequoia PGP</td>
+                  <td>Integer underflow in SKESK6::decrypt() — DoS via crafted packet</td>
+                  <td><span class="severity-m">M 6.5</span></td>
+                  <td><span class="status-review">Under Review</span></td>
+              </tr>
+              <tr>
+                  <td>Paddle.com</td>
+                  <td>Blind SSRF via webhook notification settings</td>
+                  <td><span class="severity-h">H 7.7</span></td>
+                  <td><span class="status-dup">Duplicate</span></td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h2>contact</h2>
+      <div class="contact">
+          <p>
+              YesWeHack : <a href="https://yeswehack.com/hunters/shark_" target="_blank">shark_</a><br>
+              Email : sh4rk0x@proton.me
+          </p>
+      </div>
+
+      <footer>
+          <p>sh4rk0x · All findings reported through responsible disclosure programs.</p>
+      </footer>
+
+  </body>
+  </html>
